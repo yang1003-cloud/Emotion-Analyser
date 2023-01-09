@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 import re
-
+from track_utils import add_prediction_details
+from datetime import datetime
 # plots and metrics
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
@@ -16,8 +17,6 @@ import neattext as nt
 from neattext.functions import clean_text
 import joblib
 from sklearn.feature_extraction import text 
-import keras
-import time
 import pandas as pd
 import numpy as np
 
@@ -148,7 +147,7 @@ def app():
         prediction = predict_emotions(cleanDocx)
         probability = get_prediction_proba(cleanDocx)
 
-        #add_prediction_details(raw_text,prediction,np.max(probability),datetime.now())
+        add_prediction_details(raw_text,prediction,np.max(probability),datetime.now())
 
         with col2:
             # st.success("Original Text")
