@@ -19,7 +19,7 @@ def space(num_lines=1):
 
 @st.cache(allow_output_mutation=True)
 def load_data():
-    data =  pd.read_excel('finaldataset.xlsx')
+    data =  pd.read_pickle("finaldataset.pkl")
     return data
 
 @st.cache(allow_output_mutation=True)
