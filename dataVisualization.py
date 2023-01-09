@@ -31,10 +31,6 @@ def load_corpus():
 def load_month_trend():
     data = pd.read_pickle("month_trend.pkl")
     return data
-@st.cache(allow_output_mutation=True)
-def load_cleancorpus():
-    data = pd.read_pickle("dtm.pkl")
-    return data
 
 @st.cache(persist=True,suppress_st_warning=True)
 def get_top_text_ngrams(corpus, ngrams=(1,1), nr=None):
@@ -87,7 +83,7 @@ def app():
     df = load_data()
     corpus = load_corpus()
     month_trend = load_month_trend()
-    clean_corpus = load_cleancorpus()
+    
     st.title("EDA Analysis of UM Facebook Confession")
     space(1)
     st.markdown("""
