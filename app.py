@@ -13,7 +13,7 @@ st.set_page_config(
         'About': "### Emotion Analyzer"
     }
 )
-import home , dataVisualization
+import home , dataVisualization, monitor
 
 page_bg_img = f"""
 <style>
@@ -33,6 +33,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 MENU = {
     "Home" : home,
     "Exploratory Data Analysis" : dataVisualization,
+    "Monitor" : monitor,
     
 }
 def main():
