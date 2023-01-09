@@ -1,6 +1,7 @@
 import streamlit as st
 import hydralit_components as hc
 import utils as udisp
+from track_utils import create_emotionclf_table
 img = 'sen pic.jpg'
 
 
@@ -46,7 +47,7 @@ def main():
         {'icon': "fas fa-info-circle", 'label':"About"}, 
     ]
 
-    #create_emotionclf_table()
+    create_emotionclf_table()
 
     over_theme = {'txc_inactive': '#FFFFFF','menu_background':'#660066'}
     menu_id = hc.nav_bar(
