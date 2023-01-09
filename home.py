@@ -29,6 +29,7 @@ max_seq_len = 500
 def load_model():
     model = ktrain.load_predictor('fypmodel')
     return model
+
 model = load_model()
 
 max_words = 5000
@@ -40,11 +41,13 @@ def space(num_lines=1):
     """Adds empty lines to the Streamlit app."""
     for _ in range(num_lines):
         st.write("")
+
+@st.cache(allow_output_mutation=True)
 def predict_emotions(docx):
       pred = model.predict(docx)
       return pred
 
-
+@st.cache(allow_output_mutation=True)
 def get_prediction_proba(docx):
     results = model.predict_proba(docx).tolist()
     print(results)
