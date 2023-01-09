@@ -2,8 +2,6 @@ import streamlit as st
 import hydralit_components as hc
 import utils as udisp
 img = 'sen pic.jpg'
-import home , dataVisualization
-
 
 
 st.set_page_config(
@@ -15,6 +13,8 @@ st.set_page_config(
         'About': "### Emotion Analyzer"
     }
 )
+import home , dataVisualization
+
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
