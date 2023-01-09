@@ -26,8 +26,8 @@ from ktrain import text
 
 max_seq_len = 500
 
-@st.cache
-model = ktrain.load_predictor('fypmodel')
+
+model =st.cache( ktrain.load_predictor('fypmodel'))
 
 max_words = 5000
 
