@@ -28,4 +28,4 @@ def add_prediction_details(rawtext,prediction,probability,timeOfvisit):
 def view_all_prediction_details():
 	c.execute('SELECT * FROM emotionclfTable ORDER BY timeOfvisit DESC')
 	data = c.fetchall()
-	return 
+	return data
